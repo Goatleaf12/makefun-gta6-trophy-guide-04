@@ -1,5 +1,1 @@
-[
-  { "file": "1-checklist.jpg", "path": "/", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "2-silver.jpg", "path": "/", "grade": "silver", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "3-bronze.jpg", "path": "/", "grade": "bronze", "scroll": 1400, "viewport": { "width": 1280, "height": 800 } }
-]
+[{"file":"1-hero.jpg","path":"/","view":"tracker hero dashboard (progress ring, grade chips, hours remaining, at-risk count, next-up panel) above the checklist, Positive Mental Attitude guide open, 11 trophies pre-earned, meditation counter at 6/18, spoilers hidden","viewport":{"height":800,"width":1280}},{"file":"2-roadmap.jpg","path":"/","view":"roadmap tab: goal banner, editorial decisions with 'our call' verdicts, seven stage cards and tracked counters","viewport":{"height":800,"width":1280}},{"file":"3-ledger.jpg","path":"/","view":"ledger tab: the disputes section — two-sided cases with gold 'our call' verdict boxes","viewport":{"height":800,"width":1280}},{"file":"4-sources.jpg","path":"/","view":"sources tab: the 22-source table with per-source claim counts and the coverage matrix","viewport":{"height":800,"width":1280}}]
