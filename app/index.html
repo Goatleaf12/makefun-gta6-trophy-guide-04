@@ -3,23 +3,101 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI trophy checklist</title>
+<title>Leonida Ledger v4 — GTA VI trophy guide &amp; tracker</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>GTA VI trophy checklist</h1>
-  <p id="progress">0 of 55 earned</p>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">LL</div>
+    <div class="brand-text">
+      <h1>Leonida Ledger <span class="vtag">v4 · tracker-first</span></h1>
+      <p>GTA VI · PlayStation 5 · the official 55 trophies — platinum dashboard, guide &amp; adjudicated ledger</p>
+    </div>
+  </div>
+  <div class="top-actions">
+    <button id="btn-export" type="button">Export</button>
+    <label class="import-btn">Import<input id="import-file" type="file" accept="application/json" hidden></label>
+    <span class="saved-note">Progress saved in this browser</span>
+    <label class="spoiler-toggle"><input id="spoiler-toggle" type="checkbox" checked> Hide story spoilers until earned</label>
+  </div>
 </header>
-<div class="controls">
-  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
-  <button id="export" type="button">Export progress</button>
-  <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
+
+<!-- TRACKER HERO — the first screen: your platinum dashboard, driven by saved state -->
+<section class="hero" id="hero">
+  <div class="hero-ring-wrap">
+    <svg class="ring" viewBox="0 0 120 120" width="132" height="132" role="img" aria-label="Platinum progress">
+      <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+      <circle class="ring-fg" id="ring-fg" cx="60" cy="60" r="52"></circle>
+    </svg>
+    <div class="ring-label"><span id="hero-pct">0%</span><small>to platinum</small></div>
+  </div>
+  <div class="hero-stats">
+    <div class="hstat"><span class="hnum" id="hero-earned">0 / 55</span><span class="hlab">trophies earned</span>
+      <span class="grade-chips">
+        <span class="gchip plat" id="chip-platinum">P 0/1</span>
+        <span class="gchip gold" id="chip-gold">G 0/2</span>
+        <span class="gchip silv" id="chip-silver">S 0/6</span>
+        <span class="gchip bron" id="chip-bronze">B 0/46</span>
+      </span>
+    </div>
+    <div class="hstat"><span class="hnum" id="hero-steps">0 / 562</span><span class="hlab">guide steps covered by earned trophies</span></div>
+    <div class="hstat"><span class="hnum" id="hero-hours">≈200 h</span><span class="hlab">estimated time remaining on the 200-hour plan</span></div>
+    <div class="hstat risk" id="hero-risk" hidden><span class="hnum" id="hero-risk-n">0</span><span class="hlab">unearned at-risk trophies — see the Ledger tab</span></div>
+  </div>
+  <div class="hero-next" id="hero-next"></div>
+</section>
+
+<div class="audit-strip" id="audit-strip"></div>
+
+<div class="alert-strip" id="alert-strip">
+  <strong>⚠ 1 POSSIBLY MISSABLE</strong> — Positive Mental Attitude: two guides say a Chapter 1 balcony meditation spot may close when Chapter 1 ends. Meditate there in Chapter 1; the dispute is adjudicated in the Ledger (cases D-03 and D-04).
 </div>
-<table>
-  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>How to get it</th></tr></thead>
-  <tbody id="rows"></tbody>
-</table>
+
+<nav class="tabs" id="tabs">
+  <button type="button" data-tab="checklist" class="tab active">Checklist &amp; guide</button>
+  <button type="button" data-tab="roadmap" class="tab">Roadmap &amp; decisions</button>
+  <button type="button" data-tab="ledger" class="tab">Ledger — disputes, risk &amp; 100%</button>
+  <button type="button" data-tab="sources" class="tab">Sources &amp; coverage</button>
+</nav>
+
+<div class="filters" id="filters">
+  <div class="chips" id="chips"></div>
+  <div class="filter-tools">
+    <input id="search" type="search" placeholder="Search trophies…">
+    <label>Grade <select id="grade-filter">
+      <option value="all">All</option><option value="platinum">Platinum</option>
+      <option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option>
+    </select></label>
+  </div>
+</div>
+
+<main>
+  <section id="view-checklist" class="view">
+    <div class="panes">
+      <aside class="pane list-pane"><div id="list"></div></aside>
+      <article class="pane detail-pane"><div id="detail"></div></article>
+      <aside class="pane rail-pane">
+        <h2>Sources — cited by number</h2>
+        <div id="rail"></div>
+      </aside>
+    </div>
+  </section>
+  <section id="view-roadmap" class="view" hidden>
+    <div id="roadmap"></div>
+  </section>
+  <section id="view-ledger" class="view" hidden>
+    <div id="ledger"></div>
+  </section>
+  <section id="view-sources" class="view" hidden>
+    <div id="sources"></div>
+  </section>
+</main>
+
+<footer>
+  <p>Guide text is original to this entry and paraphrases the numbered public sources above; trophy names, descriptions and grades are the official PlayStation 5 list. Where sources disagree, the Ledger shows both sides and this guide's call. Nothing here is affiliated with the game's publisher.</p>
+</footer>
+
 <script type="module" src="app.js"></script>
 </body>
 </html>
